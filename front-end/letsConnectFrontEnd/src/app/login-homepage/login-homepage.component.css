@@ -1,0 +1,38 @@
+#loginPageBody {
+  display: flex !important;
+  flex-direction: row;
+}
+
+.popularPics {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  padding-top: 3%;
+}
+
+.trendingTopics {
+  width: 60vw;
+}
+
+.picAndTitle > img {
+  height: 111px;
+  width: 111px;
+}
+
+.picAndTitle {
+  width: 111px;
+  margin-top: 3%;
+}
+
+.picAndTitle > div {
+  text-align: center;
+}
+
+.socialLoginPart {
+  margin-top: 10%;
+  margin-left: 10%;
+}
+
+.googleLogin > img,
+.fbLogin > img {
+  width: 260px;
+}

@@ -1,0 +1,12 @@
+.appHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerTabs {
+  width: 30vw;
+}
+
+.headerTabItem {
+  margin-left: 10%;
+}
