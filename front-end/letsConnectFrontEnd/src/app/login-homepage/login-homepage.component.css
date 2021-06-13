@@ -35,4 +35,5 @@
 .googleLogin > img,
 .fbLogin > img {
   width: 260px;
+  cursor: pointer;
 }

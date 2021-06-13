@@ -1,0 +1,40 @@
+.profilePic > img {
+  border-radius: 50%;
+  margin-left: 35%;
+  margin-bottom: -14%;
+  margin-top: 14%;
+  border: 3px solid white;
+}
+
+.profilePic {
+  background: lavender;
+}
+
+.name {
+  text-align: center;
+  margin-top: 14%;
+}
+
+.title {
+  color: #b3b0b5;
+  text-align: center;
+  font-size: larger;
+  margin-top: 5%;
+}
+
+.count {
+  text-align: center;
+}
+
+.profilecard {
+  padding: 0px !important;
+  height: 60vh;
+}
+
+.viewProfile {
+  margin-top: 15%;
+  text-align: center;
+}
+.viewProfile > span {
+  color: rgb(253, 196, 91);
+}

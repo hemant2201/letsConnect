@@ -1,0 +1,29 @@
+.displayPicture > img {
+  border-radius: 50%;
+  height: 35px;
+}
+
+.namePic {
+  display: flex;
+}
+
+.singlePerson {
+  display: flex;
+  justify-content: space-between;
+  margin: 3% auto;
+}
+
+.name {
+  margin: top 3%;
+  margin-left: 5px;
+}
+
+.mainBody {
+  height: 85vh;
+}
+
+.mat-card-header {
+  color: #7db6d8;
+  font-weight: 500;
+  font-size: larger;
+}

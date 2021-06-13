@@ -1,0 +1,68 @@
+.postHeader {
+  display: flex;
+  flex-direction: row;
+}
+
+.centrePartBody {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.file-input {
+  display: none;
+}
+
+.profilePic > img {
+  border-radius: 50%;
+  height: 30px;
+}
+
+.file-upload {
+  margin-left: 0%;
+}
+
+.attachmentPart {
+  display: flex;
+}
+
+.buttons {
+  margin-left: 43%;
+}
+
+.feedCards {
+  margin-top: 3%;
+}
+
+.displayPicture > img {
+  border-radius: 50%;
+  height: 35px;
+}
+
+.username {
+  margin: auto 10px;
+  font-weight: 500;
+}
+
+.centrePartBody {
+  height: 100vh;
+  overflow: scroll;
+}
+
+.centrePartBody::-webkit-scrollbar {
+  display: none;
+}
+
+.attachedPicture > img {
+  max-height: 200px;
+  width: 100%;
+}
