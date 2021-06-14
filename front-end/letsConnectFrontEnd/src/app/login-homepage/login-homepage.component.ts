@@ -19,17 +19,35 @@ export class LoginHomepageComponent implements OnInit {
   ) {}
   user: any;
   loggedIn: boolean = false;
+  reqBody: any;
   ngOnInit(): void {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = user != null;
     });
+
+    this.reqBody = {
+      userId: '',
+      email: '',
+      name: '',
+      photoUrl: '',
+    };
   }
 
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((res) => {
       console.log(res);
+      this.reqBody.userId = res.provider + res.id;
+      this.reqBody.email = res.email;
+      this.reqBody.name = res.name;
+      this.reqBody.photoUrl = res.photoUrl;
+      this.utilService
+        .postdata('localhost:3000/user', this.reqBody)
+        .subscribe((data) => {
+          console.log(data);
+        });
       this.utilService.userInfo = res;
+
       this.router.navigate(['/home']);
     });
   }
