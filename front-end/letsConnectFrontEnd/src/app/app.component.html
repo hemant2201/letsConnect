@@ -1,12 +1,12 @@
 <mat-toolbar class="appHeader">
-  <div class="heading">
+  <div (click)="deActivateSelfMode()" class="heading">
     LetsConnect
   </div>
   <div class="headerTabs">
-    <span class="headerTabItem">
+    <span (click)="deActivateSelfMode()" class="headerTabItem">
       Home
     </span>
-    <span class="headerTabItem">
+    <span (click)="activateSelfMode()" class="headerTabItem">
       My Profile
     </span>
     <span class="headerTabItem">

@@ -34,29 +34,32 @@ export class LoginHomepageComponent implements OnInit {
     };
   }
 
+  signIn(res: any): void {
+    this.reqBody.userId = res.provider + '_' + res.id;
+    this.reqBody.email = res.email;
+    this.reqBody.name = res.name;
+    this.reqBody.photoUrl = res.photoUrl;
+    this.utilService
+      .postdata(this.utilService.baseUrl + '/user', this.reqBody)
+      .subscribe((data) => {
+        console.log(data);
+        this.router.navigate(['/home']);
+      });
+  }
+
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then((res) => {
       console.log(res);
-      this.reqBody.userId = res.provider + res.id;
-      this.reqBody.email = res.email;
-      this.reqBody.name = res.name;
-      this.reqBody.photoUrl = res.photoUrl;
-      this.utilService
-        .postdata('localhost:3000/user', this.reqBody)
-        .subscribe((data) => {
-          console.log(data);
-        });
+      this.signIn(res);
       this.utilService.userInfo = res;
-
-      this.router.navigate(['/home']);
     });
   }
 
   signInWithFB(): void {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then((res) => {
       console.log(res);
+      this.signIn(res);
       this.utilService.userInfo = res;
-      this.router.navigate(['/home']);
     });
   }
 

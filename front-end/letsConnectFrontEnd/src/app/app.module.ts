@@ -23,6 +23,7 @@ import { RightExtraInfoComponent } from './home-feedpage/right-extra-info/right-
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatIconModule,
     MatButtonModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     {

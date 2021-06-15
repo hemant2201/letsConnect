@@ -8,16 +8,23 @@ import { getLocaleDateFormat } from '@angular/common';
 })
 export class UtilityServiceService {
   constructor(private http: HttpClient) {}
-
-  getData(url:string){
+  baseUrl: string = 'http://localhost:3000';
+  selfProfileMode: boolean = false;
+  getData(url: string) {
     return this.http.get(url);
   }
 
-  postdata(url:string,body:any)
-  {
-    return this.http.post(url,body);
+  postdata(url: string, body: any) {
+    return this.http.post(url, body, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
   }
 
-  
+  getSelfFeed(): void {
+    this.selfProfileMode = true;
+  }
+
   userInfo: object = {};
 }

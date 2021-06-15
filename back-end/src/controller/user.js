@@ -16,7 +16,7 @@ const addUser = async (params) => {
       timeline: [],
       self: [],
     });
-    return await user.save();
+    return await user.save().exec();
   } catch (e) {
     return {
       err: "User not created!",
@@ -60,7 +60,6 @@ const getUserById = async (params) => {
 };
 
 const addFollower = async (params) => {
-  
   try {
     const followerId = params.userId;
     const followeeId = params.followeeId;
@@ -260,6 +259,7 @@ const addPostInTimeLine = async (userId, postId) => {
 const getTimeLine = async (userId) => {
   let userDetails = await getUserById(userId);
   userDetails = userDetails.shift()._doc;
+  console.log(userDetails);
   if (userDetails && userDetails.timeline && userDetails.timeline.length) {
     return await post.getPostByIds({ postId: userDetails.timeline });
   }

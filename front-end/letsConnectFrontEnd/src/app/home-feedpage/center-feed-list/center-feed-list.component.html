@@ -11,7 +11,7 @@
         <div class="inputBox">
           <mat-form-field class="example-full-width">
             <mat-label>Enter your post</mat-label>
-            <textarea matInput placeholder="Ex. It makes me feel..." #postTextContent></textarea>
+            <textarea matInput placeholder="Ex. It makes me feel..." [(ngModel)]="postContent"></textarea>
           </mat-form-field>
         </div>
       </div>
@@ -26,101 +26,39 @@
           </button>
         </div>
         <div class="buttons">
-          <button mat-button color="primary">Post</button>
+          <button (click)="PostContent()" mat-button color="primary">Post</button>
           <button mat-button color="warn">Cancel</button>
         </div>
       </div>
     </div>
   </mat-card>
 
-  <div class="feedlist">
+  <div *ngFor="let post of this.feedList" class="feedlist">
     <mat-card class="feedCards">
       <div class="postBody">
         <div class="postHeader">
           <div class="displayPicture">
-            <img src={{userDetails.photoUrl}} alt="">
+            <img *ngIf="this.selfMode" src={{userDetails.photoUrl}} alt="">
+            <img *ngIf="this.selfMode==false" src={{post.photoUrl}} alt="">
           </div>
-          <div class="username">
+          <div *ngIf="this.selfMode" class="username">
             {{userDetails.name}}
           </div>
+          <div *ngIf="this.selfMode==false" class="username">
+            {{post.name}}
+          </div>
+
         </div>
         <div class="postContent">
           <div class="attachedPicture">
-            <img
-              src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
-              alt="">
+            <img src={{post.photoUrl}} alt="">
           </div>
           <div class="textContent">
-            sample content for testing purpose
+            {{post.content}}
           </div>
         </div>
       </div>
     </mat-card>
-    <mat-card class="feedCards">
-      <div class="postBody">
-        <div class="postHeader">
-          <div class="displayPicture">
-            <img src={{userDetails.photoUrl}} alt="">
-          </div>
-          <div class="username">
-            {{userDetails.name}}
-          </div>
-        </div>
-        <div class="postContent">
-          <div class="attachedPicture">
-            <img
-              src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
-              alt="">
-          </div>
-          <div class="textContent">
-            sample content for testing purpose
-          </div>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="feedCards">
-      <div class="postBody">
-        <div class="postHeader">
-          <div class="displayPicture">
-            <img src={{userDetails.photoUrl}} alt="">
-          </div>
-          <div class="username">
-            {{userDetails.name}}
-          </div>
-        </div>
-        <div class="postContent">
-          <div class="attachedPicture">
-            <img
-              src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
-              alt="">
-          </div>
-          <div class="textContent">
-            sample content for testing purpose
-          </div>
-        </div>
-      </div>
-    </mat-card>
-    <mat-card class="feedCards">
-      <div class="postBody">
-        <div class="postHeader">
-          <div class="displayPicture">
-            <img src={{userDetails.photoUrl}} alt="">
-          </div>
-          <div class="username">
-            {{userDetails.name}}
-          </div>
-        </div>
-        <div class="postContent">
-          <div class="attachedPicture">
-            <img
-              src="https://www.planetware.com/wpimages/2020/02/france-in-pictures-beautiful-places-to-photograph-eiffel-tower.jpg"
-              alt="">
-          </div>
-          <div class="textContent">
-            sample content for testing purpose
-          </div>
-        </div>
-      </div>
-    </mat-card>
+
   </div>
 </div>

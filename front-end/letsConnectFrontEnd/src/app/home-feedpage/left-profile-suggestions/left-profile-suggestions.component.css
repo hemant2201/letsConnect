@@ -34,6 +34,7 @@
 .viewProfile {
   margin-top: 15%;
   text-align: center;
+  cursor: pointer;
 }
 .viewProfile > span {
   color: rgb(253, 196, 91);

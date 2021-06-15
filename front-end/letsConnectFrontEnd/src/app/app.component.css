@@ -9,4 +9,8 @@
 
 .headerTabItem {
   margin-left: 10%;
+  cursor: pointer;
+}
+.heading {
+  cursor: pointer;
 }

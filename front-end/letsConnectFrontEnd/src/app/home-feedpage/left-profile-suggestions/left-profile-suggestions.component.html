@@ -11,7 +11,7 @@
         Followers
       </div>
       <div class="count">
-        35
+        {{userProfileInfo.followersCount}}
       </div>
     </div>
     <div class="followingsCount">
@@ -19,10 +19,10 @@
         Following
       </div>
       <div class="count">
-        60
+        {{userProfileInfo.followingCount}}
       </div>
     </div>
-    <div class="viewProfile">
+    <div (click)="viewSelfProfileDetails()" class="viewProfile">
       <span>View Profile</span>
     </div>
   </div>
